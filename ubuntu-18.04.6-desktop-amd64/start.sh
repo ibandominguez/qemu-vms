@@ -21,7 +21,8 @@ if [ ! -f "$disk_img" ]; then
   qemu-system-x86_64 \
     -cdrom "$iso" \
     -drive "file=${disk_img},format=qcow2" \
-    -m 2G \
+    -m 4G \
+    -accel hvf \
     -smp 2 \
   ;
 fi
