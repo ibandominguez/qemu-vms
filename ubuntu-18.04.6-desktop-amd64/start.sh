@@ -17,7 +17,7 @@ fi
 
 # Go through installer manually.
 if [ ! -f "$disk_img" ]; then
-  qemu-img create -f qcow2 "$disk_img" 8G
+  qemu-img create -f qcow2 "$disk_img" 10G
   qemu-system-x86_64 \
     -cdrom "$iso" \
     -drive "file=${disk_img},format=qcow2" \
@@ -44,9 +44,6 @@ qemu-system-x86_64 \
   -drive "file=${disk_img_snapshot},format=qcow2" \
   -m 4G \
   -smp 2 \
-  -soundhw hda \
-  -vga virtio \
   -accel hvf \
-  -vnc 192.168.189.138:0 \
   "$@" \
 ;
