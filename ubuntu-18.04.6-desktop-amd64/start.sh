@@ -47,6 +47,5 @@ qemu-system-x86_64 \
   -vga virtio \
   -accel hvf \
   -vnc 192.168.189.138:0 \
-  -chardev qemu-vdagent,id=ch1,name=vdagent,clipboard=on \
   "$@" \
 ;
